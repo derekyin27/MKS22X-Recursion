@@ -6,7 +6,9 @@ public class recursion{
       if (Math.abs(guess * (n - guess)) <= percent)
       return guess;
       else {
-        guess = (n/guess + guess) / 2
+        guess = (n/guess + guess) / 2;
+        return sqrtH(n, guess, percent);
       }
     }
+
 }

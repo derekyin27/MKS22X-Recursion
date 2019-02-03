@@ -21,6 +21,17 @@ public class recursion{
       ArrayList<Integer> finals = new ArrayList<Integer>();
       return makeAllSumsH(n, 0, finals);
     }
+    public static ArrayList<Integer> makeAllSumsH(int n, int possible, ArrayList<Integer> x){//helper function, when the original number turns into 0, the sum is added.
+      if (n==0){
+      x.add(possible);
+      return x;
+    }
+      else {makeAllSumsH(n-1, possible+n, x);//this case is when the number IS added
+      makeAllSumsH(n-1, possible, x);//when the number is not added (runs through all different cases)
+      return x;
+    }
+  }
+
 
 
 

@@ -3,8 +3,12 @@ public class recursion{
     public static double sqrt(double n, double tolerance){
       return sqrtH(n, 1, tolerance);
     }
-    public static double sqrtH(double n, double guess, double percent){//sqrtH is helper
-
+    public static double sqrtH(double n, double guess, double percent){//helper function
+    if (Math.abs(guess*guess - n) <= percent){//base case is if the guess is close enough to the actual squre root based on tolerance
+      return guess;
+    }
+    else guess = (n /guess + guess)/2;//else guess is replaced w more accurate number and function called again
+    return sqrtH(n, guess, percent);
     }
 
     public static int fib(int n){
@@ -14,7 +18,7 @@ public class recursion{
     }
 
     public static ArrayList<Integer> makeAllSums(int n){
-      ArrayList<Integer> finals = new ArrayList<Integer>();//makeAllSUmsH is helper
+      ArrayList<Integer> finals = new ArrayList<Integer>();
       return makeAllSumsH(n, 0, finals);
     }
 
